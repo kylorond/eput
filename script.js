@@ -471,3 +471,24 @@ function getTreeY(x, baseHeight, amplitude) {
   const sineBaseY = window.innerHeight - baseHeight;
   return Math.sinus(x) * amplitude + sineBaseY;
 }
+
+window.addEventListener("touchstart", function (event) {
+  if (phase == "waiting") {
+    event.preventDefault(); 
+    lastTimestamp = undefined;
+    introductionElement.style.opacity = 0;
+    phase = "stretching";
+    window.requestAnimationFrame(animate);
+  }
+});
+
+window.addEventListener("touchend", function (event) {
+  if (phase == "stretching") {
+    phase = "turning";
+  }
+});
+
+window.addEventListener("touchmove", function (event) {
+  event.preventDefault(); 
+});
+
