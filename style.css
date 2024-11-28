@@ -27,6 +27,7 @@ body {
 #introduction {
   width: 200px;
   height: 150px;
+  top: 45px;
   position: absolute;
   font-weight: 600;
   font-size: 0.8em;
@@ -52,6 +53,7 @@ body {
 
 #perfect {
   position: absolute;
+  top: 45px;
   opacity: 0;
   transition: opacity 2s;
 }
